@@ -1,8 +1,8 @@
 # jupiter-sdk-ios
 
 ### Version
-- 1.10.8
-    - Release Date : 2022.12.01
+- 1.11.3
+    - Release Date : 2022.12.27
 
 ### Requirement
 - Deployment OS : iOS 12.0
@@ -20,9 +20,7 @@
         - App communicates using CoreBluetooth
         - App registers for location updates
 - pod dependency
-    - Alamofire
-    - FirebaseMLCommon
-    - Firebase/MLModelInterpreter
+    - Nothing
 ### How to install
 
 - Using Cocoapod
