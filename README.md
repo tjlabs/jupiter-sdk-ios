@@ -21,21 +21,31 @@
         - App registers for location updates
 - pod dependency
     - Nothing
+    
 ### How to install
-
 - Using Cocoapod
     1. Open ‘Podfile’
         ![Untitled](https://user-images.githubusercontent.com/18392918/201238837-19ef5a2a-5e3d-4efe-a98a-2bcf3262a2f7.png)
     2. Write the commands
         ```shell
-        source '[https://github.com/tjlabs/jupiter-sdk-ios.git](https://github.com/tjlabs/jupiter-sdk-ios.git)'
+        source 'https://github.com/tjlabs/jupiter-sdk-ios.git'
         ```
         ```shell
         pod 'JupiterSDK’
         ```
         ![Untitled](https://user-images.githubusercontent.com/18392918/201238904-6d7f9cf9-b35c-46ea-9938-88575e276073.png)
     3. pod install through Terminal
+    
 ### How to use
+- Services
+    1. SectorDetection (SD)
+    2. BuildingDetection (BD)
+    3. CoarseLevelDetection (CLD)
+    4. FineLevelDetection (FLD)
+    5. CoarseLocationEstimation (CLE)
+    6. FineLocationTracking (FLT)
+    7. OnSpotAuthorization (OSA)
+    
 - Initialize Service
     ```swift
     // Import
@@ -46,19 +56,20 @@
     ```
     
 - Start Service
-    
     ```swift
-    serviceManager.startService(id: String, sector_id: Int, service: String, mode: String))
+    serviceManager.startService(id: String, sector_id: Int, service: String, mode: String)
+    
+    // Add only if using FLT
+    serviceManager.addObserver(self)
     ```
     
 - Stop Service
-    
     ```swift
     serviceManager.stopService()
     ```
     
 - Get Result
-    - 위의 startService 설정 된 service에 해당하는 결과값을 리턴함 → json 을 decoding하여 사용
+    - Returns the result corresponding to the service set in startService above → user can decode the json struct
     
     ```swift
     serviceManager.getResult(completion: { [self] statusCode, returnedString in
