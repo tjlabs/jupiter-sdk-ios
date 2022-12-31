@@ -62,6 +62,8 @@
     // Add only if using FLT
     serviceManager.addObserver(self)
     ```
+    - Example
+        ![image](https://user-images.githubusercontent.com/92098727/210126823-2b5808c2-c17c-4fe7-9e98-d213a92325cc.jpeg)
     
 - Stop Service
     ```swift
@@ -117,6 +119,14 @@
             ![image](https://user-images.githubusercontent.com/92098727/210126590-31788a1e-a812-48ac-ade3-4220b749dabd.jpeg)
         - OnSpotAuthorization
             ![image](https://user-images.githubusercontent.com/92098727/210126601-a3bfad75-5434-4880-8e2a-354bbebef330.jpeg)
+        - Detail
+            - user_id : Since Jupiter is a technology that uses the user's recent past signal pattern, it needs information to identify the user on the service side. It is in the form of a String, and it is impossible to determine who the user is in the real world with this value alone.
+            - sector_id : TJLABS gives you the number of the place you want to service and informs you.
+            - building_name : It is the name of the building located in the service area and is named by TJLABS. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
+            - level_name : It is the name of the level(floor) located in the service area and is named by TJLABS. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
+            - spot_id : It is the unique number of the spot located in the service area. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
+            - phase : Indicates Jupiter's positioning phase. It is divided into 1 to 4, and the higher the number, the higher the level of accuracy. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
+            - mobile_time : Time to send request to Jupiter. 
         
     - Result Struct
         - SectorDetectionResult
@@ -135,4 +145,24 @@
             - spots: [Spot]
             - Spot
                 ![image](https://user-images.githubusercontent.com/92098727/210126796-f6b0fe30-c3e9-41fb-aee7-c2cd7358bc7a.jpeg)
+        - Detail
+            - mobile_time : Returns the time when the request was sent to Jupiter.
+            - sector_name : The name of the service area.
+            - building_name : The name of the building located within the service area.
+            - level_name : The name of the level located within the service area.
+            - scc : It means positioning reliability or accuracy, and a value of 0.7 or higher indicates high accuracy.
+            - scr : Percentage of location confidence. Used internally by Jupiter for position calculation.
+            - x & y : These are the indoor coordinates of the service area provided by Jupiter. The indoor coordinates are the values of the indoor map of TJLABS.
+            - absolute_heading : Indicates the direction the user is looking. In the case of the pdr mode, the range of the provided heading is not fixed, and in the case of the dr mode, it is provided only within the direction of the indoor map.
+            - phase : Indicates Jupiter's positioning phase. It is divided into 1 to 4, and the higher the number, the higher the level of accuracy.
+            - calculated_time : Time taken for calculation.
+            - index : The index of the current user used for Jupiter calculations. The user's index is used to create the trajectory information the user has moved.
+            - velocity : Indicates the user's speed. It is provided only in dr mode and is km/h.
+            - Spot
+                - spot_id : This is the unique ID of the spot defined by TJLABS.
+                - spot_number : The number of the spot that matches the spot id.
+                - spot_name : The name of the spot that matches the spot id.
+                - spot_feature_id : This represents the properties of the spot. For example, number 1 means a stair.
+                - spot_x & spot_y : These are the spot coordinates of the service area provided by Jupiter. The coordinates are the values of the indoor map of TJLABS.
+                - ccs : It means the probability that spot was detected. The higher the number, the more users are at that spot.
 
