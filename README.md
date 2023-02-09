@@ -1,8 +1,8 @@
 # jupiter-sdk-ios
 
 ### Version
-- 1.11.3
-    - Release Date : 2022.12.27
+- 1.11.6
+    - Release Date : 2023.02.09
 
 ### Requirement
 - Deployment OS : iOS 12.0
