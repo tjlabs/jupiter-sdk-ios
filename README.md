@@ -121,7 +121,7 @@
         - CoarseLocationEstimation
             ![image](https://user-images.githubusercontent.com/92098727/210126583-0a877f17-0cfb-4eff-85fc-a9db8afcd8ba.jpeg)
         - FineLocationTracking
-            ![image](https://user-images.githubusercontent.com/92098727/210126590-31788a1e-a812-48ac-ade3-4220b749dabd.jpeg)
+            ![image](https://user-images.githubusercontent.com/92098727/219250398-626fe59a-5739-4754-9818-43208e9f3dc6.jpeg)
         - OnSpotAuthorization
             ![image](https://user-images.githubusercontent.com/92098727/210126601-a3bfad75-5434-4880-8e2a-354bbebef330.jpeg)
         - Detail
@@ -146,7 +146,7 @@
         - CoarseLocationEstimationResult
             ![image](https://user-images.githubusercontent.com/92098727/210126759-cc4607d9-98df-426f-809b-53180d2eecb4.jpeg)
         - FineLocationTrackingResult
-            ![image](https://user-images.githubusercontent.com/92098727/210126769-eddc64e0-7b87-496c-90fc-ff846b8856a4.jpeg)
+            ![image](https://user-images.githubusercontent.com/92098727/219250495-69c7d076-4321-46ff-b8bb-eb671eb70d74.jpeg)
         - OnSpotAuthorizationResult
             - spots: [Spot]
             - Spot
