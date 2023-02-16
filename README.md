@@ -1,8 +1,8 @@
 # jupiter-sdk-ios
 
 ### Version
-- 1.11.8
-    - Release Date : 2023.02.14
+- 1.11.9
+    - Release Date : 2023.02.15
 
 ### Requirement
 - Deployment OS : iOS 12.0
@@ -35,6 +35,9 @@
         ```
         ![Untitled](https://user-images.githubusercontent.com/18392918/201238904-6d7f9cf9-b35c-46ea-9938-88575e276073.png)
     3. pod install through Terminal
+- Using Swift Package Manager
+    1. git link
+        https://github.com/tjlabs/jupiter-sdk-spm.git
     
 ### How to use (Functions and APIs)
 - Services
@@ -57,7 +60,9 @@
     
 - Start Service
     ```swift
-    serviceManager.startService(id: String, sector_id: Int, service: String, mode: String)
+    let jupiterSerivce = serviceManager.startService(id: String, sector_id: Int, service: String, mode: String)
+    // jupiterService.0 is Bool type -> returns true/false
+    // jupiterService.1 is String type -> returns message 
     
     // Add only if using FLT
     serviceManager.addObserver(self)
@@ -126,6 +131,7 @@
             - level_name : It is the name of the level(floor) located in the service area and is named by TJLABS. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
             - spot_id : It is the unique number of the spot located in the service area. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
             - phase : Indicates Jupiter's positioning phase. It is divided into 1 to 4, and the higher the number, the higher the level of accuracy. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
+            - rss_compensation_list : Parameters to improve performance differences between models
             - mobile_time : Time to send request to Jupiter. 
         
     - Result Struct
