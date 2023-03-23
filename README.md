@@ -121,7 +121,7 @@
         - CoarseLocationEstimation
             ![image](https://user-images.githubusercontent.com/92098727/210126583-0a877f17-0cfb-4eff-85fc-a9db8afcd8ba.jpeg)
         - FineLocationTracking
-            ![image](https://user-images.githubusercontent.com/92098727/219250398-626fe59a-5739-4754-9818-43208e9f3dc6.jpeg)
+            ![image](https://user-images.githubusercontent.com/92098727/227153962-c5afd608-a22a-4413-9ca5-0f61eb39dcbe.jpeg)
         - OnSpotAuthorization
             ![image](https://user-images.githubusercontent.com/92098727/210126601-a3bfad75-5434-4880-8e2a-354bbebef330.jpeg)
         - Detail
@@ -132,6 +132,7 @@
             - spot_id : It is the unique number of the spot located in the service area. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
             - phase : Indicates Jupiter's positioning phase. It is divided into 1 to 4, and the higher the number, the higher the level of accuracy. If used only in FLT, the request is initially sent with an empty state, and then the returned result is entered and sent.
             - rss_compensation_list : Parameters to improve performance differences between models
+            - sc_compensation_list : Parameters to improve performance by calibrating the user's movement trajectory
             - mobile_time : Time to send request to Jupiter. 
         
     - Result Struct
@@ -146,7 +147,7 @@
         - CoarseLocationEstimationResult
             ![image](https://user-images.githubusercontent.com/92098727/210126759-cc4607d9-98df-426f-809b-53180d2eecb4.jpeg)
         - FineLocationTrackingResult
-            ![image](https://user-images.githubusercontent.com/92098727/219250495-69c7d076-4321-46ff-b8bb-eb671eb70d74.jpeg)
+            ![image](https://user-images.githubusercontent.com/92098727/227154096-959faef6-5ad7-4a6a-95b0-084f27b43cb4.jpeg)
         - OnSpotAuthorizationResult
             - spots: [Spot]
             - Spot
@@ -164,6 +165,8 @@
             - calculated_time : Time taken for calculation.
             - index : The index of the current user used for Jupiter calculations. The user's index is used to create the trajectory information the user has moved.
             - velocity : Indicates the user's speed. It is provided only in dr mode and is km/h.
+            - rss_compensation : Get back the value that returns the highest scc value from the rss_compensation_list passed to the server. (*Applies from SDK version 1.11.4 or later)
+            - sc_compensation : Get back the value that returns the highest scc value from the sc_compensation_list passed to the server. (*Applies from SDK version 1.11.25 or later)
             - Spot
                 - spot_id : This is the unique ID of the spot defined by TJLABS.
                 - spot_number : The number of the spot that matches the spot id.
