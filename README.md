@@ -100,6 +100,21 @@
             func update(result: FineLocationTrackingResult) {
                 // use FineLocationTrackingResult struct
             }
+
+            func report(flag: Int) {
+                // Informs about anomalies detected by the SDK.
+                // 0 : Out of the Service Area
+                // 1 : Enter the Service Area
+                // 2 : BLE is Off
+                // 3 : Mode Change Jupiter -> Venus ( *Venus mode provides coarse location solution )
+                // 4 : Mode Change Venus -> Jupiter ( *Jupiter mode provides fine location solution )
+                // 5 : Bad Network State
+                // 6 : Network Connection Lost
+                // 7 : State Change Foreground -> Background
+                // 8 : State Change Background -> Foreground
+                // 9 : Fail to encode RFD
+                // 10 : Fail to encdoe UVD
+            }
             
             override func viewDidLoad() {
                 super.viewDidLoad()
