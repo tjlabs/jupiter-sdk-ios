@@ -1,11 +1,11 @@
 # jupiter-sdk-ios
 
 ### Version
-- 3.3.7
-    - Release Date : 2023.12.22
+- 3.3.8
+    - Release Date : 2024.01.03
 
 ### Requirement
-- Deployment OS : iOS 12.0
+- Deployment OS : iOS 12.0 -> 15.0 (3.3.8)
 - info.plist
     - Privacy - Motion Usage Description
     - Privacy - Location When In Usage Description
